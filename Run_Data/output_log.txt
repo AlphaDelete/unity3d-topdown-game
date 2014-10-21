@@ -1,0 +1,16 @@
+Initialize engine version: 4.5.4f1 (e036f44c54c9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: ATI Radeon HD 5800 Series (ID=0x6898)
+    Vendor:   ATI
+    VRAM:     1009 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\My Documents\Unity\Study_TopDownGame\Run_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\My Documents\Unity\Study_TopDownGame\Run_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\My Documents\Unity\Study_TopDownGame\Run_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\My Documents\Unity\Study_TopDownGame\Run_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.051 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
