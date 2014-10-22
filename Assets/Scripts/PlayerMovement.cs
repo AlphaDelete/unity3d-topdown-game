@@ -7,31 +7,35 @@ public class PlayerMovement : MonoBehaviour {
 	public Animator Anim;
 	private Vector3 Movement;
 
-	void Update()
+	void FixedUpdate()
 	{
 		// Set Player movement
 		SetMovement();
+
 	}
 
 	#region SetMovement
 	void SetMovement() {
 		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 		float moveVertical = Input.GetAxisRaw("Vertical");
-		
+
+		setAnimation(moveHorizontal, moveVertical);
+
 		Movement = new Vector2(moveHorizontal, moveVertical);
-		Movement.Normalize();
-		rigidbody.velocity = Movement * Speed;
+		rigidbody.velocity = Movement.normalized * Speed;
 	}
 	#endregion
 
 	#region setAnimation
-	void setAnimation(int animNumber) 
+	void setAnimation(float xAxis, float yAxis) 
 	{
-		if(animNumber == Anim.GetInteger("animation") || animNumber == -Anim.GetInteger("animation"))
-		{
-			Anim.SetInteger("animation", animNumber);
-		} else {
-			Anim.SetInteger("animation", -animNumber);
+		if ( xAxis == 0 && yAxis == 0) {
+			Anim.SetBool("walking", false);
+		}
+		else {
+			Anim.SetBool("walking", true);
+			Anim.SetFloat("xAxis", xAxis);
+			Anim.SetFloat("yAxis", yAxis);
 		}
 	}
 	#endregion

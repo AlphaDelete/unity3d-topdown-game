@@ -5,31 +5,31 @@ public class CameraMovement : MonoBehaviour {
 
 	public Transform target;
 	public float distanceDamping = 3.0F;
-	public float heightDamping = 1.0F;
-	
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
-	void LateUpdate () {
-		if (!target)
-			return;
-		
-		float wantedHeight = target.position.y;
-		float wantedDistance = target.position.x;
 
-		float currentHeight = transform.position.y;
-		float currentDistance = transform.position.x;
+	void Awake ()
+	{
+		/*
+		QualitySettings.vSyncCount = 0;
+		Application.targetFrameRate = 60;
+		*/
+	}
+
+	// Update is called once per frame
+	void LateUpdate () 
+	{
+		if (target)
+		{
+			float wantedHeight = target.position.y;
+			float wantedDistance = target.position.x;
+
+			float currentHeight = transform.position.y;
+			float currentDistance = transform.position.x;
+
+			currentHeight = Mathf.Lerp (currentHeight, wantedHeight, distanceDamping * Time.deltaTime);
+			currentDistance = Mathf.Lerp (currentDistance, wantedDistance, distanceDamping * Time.deltaTime);
+
+			this.transform.position = new Vector3 (currentDistance, currentHeight, -10);
+		}
 		
-		currentHeight = Mathf.Lerp (currentHeight, wantedHeight, heightDamping * Time.deltaTime);
-		currentDistance = Mathf.Lerp (currentDistance, wantedDistance, distanceDamping * Time.deltaTime);
-		
-		this.transform.position = new Vector3 (currentDistance, currentHeight, -10f);
 	}
 }
