@@ -5,13 +5,19 @@ public class PlayerControl : MonoBehaviour {
 	
 	public float Speed;
 	public Animator Anim;
+
 	private Vector3 Movement;
-
-	static AnimatorStateInfo currentBaseState;
-
 	private float timerAtk = 0.4f;
 	private float attackTimer ;
 	private int attacking = 0;
+
+	// Access camera to shake
+	public GameObject playerCamera;	
+	private CameraMovement moveCamera;
+
+	void Start() {
+		moveCamera = playerCamera.GetComponent<CameraMovement>();
+	}
 
 	void Update() {
 		setAttack();
@@ -47,6 +53,8 @@ public class PlayerControl : MonoBehaviour {
 			// Set the attack anim
 			attacking = 1;
 			attackTimer = timerAtk;
+			// Set camera to shake (Second, Magnitude)
+			if (moveCamera.isShaking < 2) StartCoroutine(moveCamera.shakeCamera(0.3F, 0.015F));
 		}
 
 		if(attackTimer > 0)
