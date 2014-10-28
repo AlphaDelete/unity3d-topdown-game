@@ -29,6 +29,25 @@ public class PlayerControl : MonoBehaviour {
 		setMovement();
 	}
 
+	void OnTriggerEnter(Collider other) {
+		//Destroy(other.gameObject);
+		Transform parentCollider = other.gameObject.transform.parent;
+		if (parentCollider.tag == "Pickup") 
+		{
+			Debug.Log(parentCollider.tag);
+			parentCollider.GetComponent<SpriteRenderer>().sortingLayerName = "Pickup";
+			parentCollider.transform.parent = this.transform; 
+			parentCollider.transform.localPosition = new Vector3(0, 0.6f, 0);
+		}
+
+		/*
+		 	//trow
+			parentCollider.transform.parent = null;
+			parentCollider.rigidbody.AddForce (transform.forward * 8000);
+		*/
+
+	}
+
 	#region Movement
 	void setMovement() {
 		float moveHorizontal = Input.GetAxisRaw("Horizontal");
