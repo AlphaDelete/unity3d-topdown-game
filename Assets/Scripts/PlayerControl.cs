@@ -2,27 +2,33 @@
 using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
-	
-	public float Speed;
+
+	#region Proprieties
+	// Animation
 	public Animator Anim;
+	private SpriteRenderer sprite;
 
+	// Movement
+	public float Speed;
 	private Vector3 Movement;
-	private float timerAtk = 0.4f;
-	private float attackTimer ;
-	private int attacking = 0;
-	private bool picking = false;
-	private Transform pickedItem = null;
-
 	private bool walking = false;
 	private float playerLookX;
 	private float playerLookY; 
+	//Attack
+	private float timerAtk = 0.4f;
+	private float attackTimer ;
+	private int attacking = 0;
+	//Picking
+	private bool picking = false;
+	private Transform pickedItem = null;
 
-	// Access camera to shake
+	// Camera
 	public GameObject playerCamera;	
 	private CameraMovement moveCamera;
-
+	#endregion
 
 	void Start() {
+		sprite = GetComponent<SpriteRenderer>();
 		moveCamera = playerCamera.GetComponent<CameraMovement>();
 	}
 
@@ -38,12 +44,15 @@ public class PlayerControl : MonoBehaviour {
 		// Set Player movement
 		setMovement();
 	}
+	void LateUpdate () {
+		//Adjust player layer
+		sprite.sortingOrder = (int)(10 * (transform.position.y * -1));
+	}
 	#endregion
 
 	#region TriggerEvents
 	// Check colisions each frame
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log("E");
 		Transform parentCollider = other.gameObject.transform.parent;
 		if (parentCollider.tag == "Pickup" && picking == false && pickedItem == null) 
 		{
@@ -108,7 +117,11 @@ public class PlayerControl : MonoBehaviour {
 			if (Input.GetButtonDown ("Fire2") && attacking == 0 && picking == false) {
 				setGrab();
 			} else if (Input.GetButtonDown ("Fire2") && picking == true ) {
-				setThrow();
+				if (!walking) {
+					setDrop();
+				} else {
+					setThrow();
+				}
 			}
 		}
 		Anim.SetBool("picking", picking);
@@ -122,18 +135,42 @@ public class PlayerControl : MonoBehaviour {
 		pickedItem.transform.localPosition = new Vector3(0, 0.6f, 0);
 	}
 
-	void setThrow() {
-		if (!walking) {
-			pickedItem.transform.parent = null;
-			pickedItem.rigidbody2D.isKinematic = true;
-			pickedItem.rigidbody2D.position = 
-					new Vector2(
-						transform.position.x + pickedItem.collider2D.bounds.size.x * playerLookX, 
-						transform.position.y + pickedItem.collider2D.bounds.size.y * playerLookY
-					);
-			pickedItem.GetComponent<SpriteRenderer>().sortingLayerName = "Objects";
-			picking = false;
+	void setDrop() {
+		// Remove Item from player parent 
+		pickedItem.transform.parent = null;
+		pickedItem.rigidbody2D.isKinematic = true;
+
+		//Set New Position to drop item
+		float newY, newX;
+		if (playerLookY == -1) {
+			// Looking up: Use Player Collider Size + Y position
+			newY = (transform.collider2D.bounds.size.y + 0.02f) * -1F;
+		} else if (playerLookY == 1) {
+			// Looking down: Use item Collider Size + Y position
+			newY = pickedItem.collider2D.bounds.size.y + 0.02f;
+		} else {
+			// Adjust object to the player foot
+			newY = (transform.collider2D.bounds.size.y - pickedItem.collider2D.bounds.size.y) * -1;
 		}
+		// Since X collider is in X = 0, the logis is simplier
+		newX = (pickedItem.collider2D.bounds.size.x + 0.02f) * playerLookX;
+		//Set New Position to drop item
+		pickedItem.rigidbody2D.position = 
+			new Vector2(
+				(transform.position.x + newX), 
+				(transform.position.y + newY)
+			);
+
+		// Adjust Object Layer
+		pickedItem.GetComponent<SpriteRenderer>().sortingLayerName = "Player";
+		// Adjust Object Order
+		pickedItem.GetComponent<SpriteRenderer>().sortingOrder = (int)((10 * ((transform.position.y + (playerLookY*0.25f))  * -1)));
+		// Set no item is picked
+		pickedItem = null;
+		picking = false;
+	}
+
+	void setThrow() {
 
 	}
 	#endregion
