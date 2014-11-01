@@ -171,7 +171,61 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	void setThrow() {
+		// Remove Item from player parent 
+		pickedItem.transform.parent = null;
+		pickedItem.rigidbody2D.isKinematic = false;
+		// Disable collider for a brief moment to not collide with player
+		pickedItem.collider2D.enabled = false;
+		// Say to the item that it is been thrown
+		pickedItem.GetComponent< PickupItem >().beenThrow = true;
+		//Set New Position to drop item
+		StartCoroutine( boostThrow(0.2f,pickedItem) ); //Start the Coroutine called "Boost", and feed it the time we want it to boost us
 
+		// Adjust Object Layer
+		pickedItem.GetComponent<SpriteRenderer>().sortingLayerName = "Player";
+		// Adjust Object Order
+		pickedItem.GetComponent<SpriteRenderer>().sortingOrder = (int)((10 * ((transform.position.y + (playerLookY*0.25f))  * -1)));
+
+		// Set no item is picked
+		pickedItem = null;
+		picking = false;
+	}
+
+	IEnumerator boostThrow(float boostDur, Transform objectBoost) 
+	{
+		//create float to store the time this coroutine is operating
+		float time = 0; 
+		//Set New Position to drop item
+		float newY = 0, newX = 0;
+		// Look player look direction before throw
+		float tLookY = playerLookY, tLookX = playerLookX;
+		//we call this loop every frame while our custom boostDur is a higher value than the "time" variable in this coroutine
+		while(boostDur > time) 
+		{
+			//Increase our "time" variable by the amount of time that it has been since the last update
+			time += Time.deltaTime; 
+			// Check player direction 
+			if (tLookY == -1 && tLookX == 0) {
+				newY = -20f; newX = 0;
+			} else if (tLookY == 1 && tLookX == 0) {
+				newY = 20f; newX = 0;
+			} else if (tLookY == 0 && tLookX == -1) {
+				newY = -3.5f; newX = -20;
+			} else if (tLookY == 0 && tLookX == 1) {
+				newY = -3.5f; newX = 20;
+			} else {
+				newY = 15f * tLookY; 
+				newX = 15f * tLookX;
+			}
+			//set our rigidbody velocity to a custom velocity every frame, so that we get a steady boost direction
+			objectBoost.rigidbody2D.velocity = new Vector2(newX, newY);
+			// Enable collider after item is far from player
+			objectBoost.collider2D.enabled = (time > 0.06f) ? true : false;
+			//go to next frame
+			yield return 0; 
+		}
+		//set our rigidbody velocity 0 to stop
+		objectBoost.rigidbody2D.velocity = new Vector2(0, 0);
 	}
 	#endregion
 }
