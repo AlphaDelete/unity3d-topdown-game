@@ -3,30 +3,48 @@ using System.Collections;
 
 public class PickupItem : MonoBehaviour {
 
+	// Animation
+	public Animator Anim;
 	public bool beenThrow = false;
+	public bool destroy = false;
+	// Camera
+	private CameraMovement moveCamera;
+
+	void Start() {
+		//Adjust pot layer
+		GetComponent<SpriteRenderer>().sortingOrder = (int)(10 * (transform.position.y * -1));
+		// Find camera script
+		moveCamera = Camera.main.GetComponent<CameraMovement>();
+	}
 
 	void FixedUpdate()
 	{
-		// Set Player movement
+		// Check if the pot is been throw
 		if(beenThrow && rigidbody2D.velocity.sqrMagnitude == 0f)
-			StartCoroutine(Die());
-
+			callDestroy();
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		Debug.Log(col.gameObject.name);
+		// Check if it collided
 		if(col.gameObject.name != "Player")
 		{
-			StartCoroutine(Die());
+			callDestroy();
 		}
 	}
 
-	private IEnumerator Die()
+	public void destroyObject()
 	{
-		//PlayAnimation(GlobalSettings.animDeath1, WrapeMode.ClampForever);
-		//yield return new WaitForSeconds(gameObject, GlobalSettings.animDeath1.length);
-		yield return new WaitForSeconds (0.167f);
+		// Destroy Object (This is set at the end of PotDestroy animation)
 		Destroy(gameObject);
 	}
+
+	private void callDestroy()
+	{
+		// Shake screen
+		StartCoroutine(moveCamera.shakeCamera(0.3F, 0.015F));
+		// Start Destroy animation
+		Anim.SetBool("destroy", true);
+	}
+
 }

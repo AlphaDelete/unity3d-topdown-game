@@ -23,13 +23,12 @@ public class PlayerControl : MonoBehaviour {
 	private Transform pickedItem = null;
 
 	// Camera
-	public GameObject playerCamera;	
 	private CameraMovement moveCamera;
 	#endregion
 
 	void Start() {
 		sprite = GetComponent<SpriteRenderer>();
-		moveCamera = playerCamera.GetComponent<CameraMovement>();
+		moveCamera = Camera.main.GetComponent<CameraMovement>();
 	}
 
 	#region OnFrameUpdate

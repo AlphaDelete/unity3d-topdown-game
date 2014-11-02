@@ -31,11 +31,9 @@ public class CameraMovement : MonoBehaviour {
 	}
 	
 	public IEnumerator shakeCamera(float duration, float magnitude) {
-		isShaking++;
 		float elapsed = 0.0f;
-		
 		while (elapsed < duration) {
-
+			isShaking++;
 			Vector3 originalCamPos = Camera.main.transform.position;
 			elapsed += Time.deltaTime;          
 			
@@ -48,9 +46,9 @@ public class CameraMovement : MonoBehaviour {
 			y *= magnitude * damper;
 			
 			Camera.main.transform.position = new Vector3(x + originalCamPos.x, y + originalCamPos.y, originalCamPos.z); 
-			
+			isShaking--;
 			yield return null;
 		}
-		isShaking--;
+
 	}
 }
