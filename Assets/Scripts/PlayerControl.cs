@@ -4,32 +4,38 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour {
 
 	#region Properties
-	private Animator Anim;
-	private SpriteRenderer Sprite;
-	private Humanoid Player;
+	private Animator anim;
+	private SpriteRenderer sprite;
+	private Humanoid player;
+
+	private Transform sight;
+	private float facingAngle = 0;
 	#endregion
 
 	void Start() {
-		Anim = GetComponent<Animator>();
-		Sprite = GetComponent<SpriteRenderer>();
-		Player = new Humanoid(this, Anim, Sprite, 4F);
+		sight = transform.Find("Sight");
+		anim = GetComponent<Animator>();
+		sprite = GetComponent<SpriteRenderer>();
+		player = new Humanoid(this, anim, sprite, 4F);
 	}
 
 	#region OnFrameUpdate
 	// Update each frame
 	void Update() {
-		Player.SetAttack(
+		player.SetAttack(
 			Input.GetButtonDown ("Fire1")
 		);
-		Player.SetGrabThrow(
+		player.SetGrabThrow(
 			Input.GetButtonDown ("Fire2")
 		);
+		// Rotate Sight
+		RotateSight(player.lookDirX, player.lookDirY);
 	}
 	// Update each frame * deltaTime
 	void FixedUpdate()
 	{
 		// Set Player movement
-		Player.SetMovement(
+		player.SetMovement(
 			Input.GetAxisRaw("Horizontal"),
 			Input.GetAxisRaw("Vertical")
 		);
@@ -37,23 +43,47 @@ public class PlayerControl : MonoBehaviour {
 	// Use this for initialization
 	void LateUpdate ()
 	{
-		Player.SetLayerOrder();
+		player.SetLayerOrder();
 	}
 	#endregion
 
 	#region TriggerEvents
 	// Check colisions each frame
 	void OnTriggerEnter2D(Collider2D other) {
-		Transform parentCollider = other.gameObject.transform.parent;
-		if (parentCollider.tag == "Pickup" && Player.picking == false && Player.pickedItem == null) 
+		Transform target = other.gameObject.transform;
+
+		Vector3 v = transform.position - target.position;
+		float angleOfTarget = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+		float anglediff = (facingAngle - angleOfTarget + 180) % 360 - 180;
+
+		if (target.tag == "Pickup" && player.picking == false && player.pickedItem == null) 
 		{
-			Player.pickedItem = parentCollider;
+			player.pickedItem = target;
 		}
+		Debug.Log (target.name + "Angle: " + angleOfTarget);
 	}
 	void OnTriggerExit2D() {
-		if (Player.picking == false) {
-			Player.pickedItem = null;
+		if (player.picking == false) {
+			player.pickedItem = null;
 		}
 	}
 	#endregion
+	
+	void RotateSight(float x, float y) {
+		if (player.walking) 
+		{	
+			// Rotate the Sight
+			if (player.lookDirY <= 0 && player.lookDirX == 1 ) {
+				facingAngle = 90;
+			} else if (player.lookDirY <= 0 && player.lookDirX == -1 ) {
+				facingAngle = 270;
+			} else if (player.lookDirY == -1 && player.lookDirX == 0) {
+				facingAngle = 0;
+			} else if (player.lookDirY == 1) {
+				facingAngle = 180;
+			}
+
+			sight.rotation = Quaternion.Euler(0, 0, facingAngle);
+		}
+	}
 }

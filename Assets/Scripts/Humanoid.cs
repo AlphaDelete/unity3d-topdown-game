@@ -19,8 +19,29 @@ public class Humanoid
 	}
 	private Vector3 _movement;
 	private bool _walking;
+	public bool walking
+	{
+		// Return the value stored in a field.
+		get { return _walking; }
+		// Store the value in the field.
+		set { _walking = value; }
+	}
 	private float _lookDirX;
+	public float lookDirX
+	{
+		// Return the value stored in a field.
+		get { return _lookDirX; }
+		// Store the value in the field.
+		set { _lookDirX = value; }
+	}
 	private float _lookDirY; 
+	public float lookDirY
+	{
+		// Return the value stored in a field.
+		get { return _lookDirY; }
+		// Store the value in the field.
+		set { _lookDirY = value; }
+	}
 	//Attack
 	private float _timerAtk;
 	private float _attackTimer ;
