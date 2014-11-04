@@ -18,10 +18,10 @@ public class PlayerControl : MonoBehaviour {
 	#region OnFrameUpdate
 	// Update each frame
 	void Update() {
-		Player.setAttack(
+		Player.SetAttack(
 			Input.GetButtonDown ("Fire1")
 		);
-		Player.setGrabThrow(
+		Player.SetGrabThrow(
 			Input.GetButtonDown ("Fire2")
 		);
 	}
@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour {
 	void FixedUpdate()
 	{
 		// Set Player movement
-		Player.setMovement(
+		Player.SetMovement(
 			Input.GetAxisRaw("Horizontal"),
 			Input.GetAxisRaw("Vertical")
 		);
@@ -37,7 +37,7 @@ public class PlayerControl : MonoBehaviour {
 	// Use this for initialization
 	void LateUpdate ()
 	{
-		Player.setLayerOrder();
+		Player.SetLayerOrder();
 	}
 	#endregion
 

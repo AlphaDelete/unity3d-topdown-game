@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerControl.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Humanoid.cs">
     <Files>
+      <File FileName="Assets\Scripts\PlayerControl.cs" Line="19" Column="22" />
       <File FileName="Assets\Scripts\CameraMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PickupItem.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="21" Column="20" />
-      <File FileName="Assets\Scripts\Humanoid.cs" Line="169" Column="47" />
+      <File FileName="Assets\Scripts\Humanoid.cs" Line="29" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
