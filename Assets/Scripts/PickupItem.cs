@@ -7,14 +7,10 @@ public class PickupItem : MonoBehaviour {
 	public Animator Anim;
 	public bool beenThrow = false;
 	public bool destroy = false;
-	// Camera
-	private CameraMovement moveCamera;
 
 	void Start() {
 		//Adjust pot layer
 		GetComponent<SpriteRenderer>().sortingOrder = (int)(10 * (transform.position.y * -1));
-		// Find camera script
-		moveCamera = Camera.main.GetComponent<CameraMovement>();
 	}
 
 	void FixedUpdate()
@@ -42,7 +38,7 @@ public class PickupItem : MonoBehaviour {
 	private void callDestroy()
 	{
 		// Shake screen
-		StartCoroutine(moveCamera.shakeCamera(0.3F, 0.015F));
+		StartCoroutine(CameraMovement.shakeCamera(0.3F, 0.015F));
 		// Start Destroy animation
 		Anim.SetBool("destroy", true);
 	}
