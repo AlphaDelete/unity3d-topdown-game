@@ -35,6 +35,7 @@ public class PickupItem : MonoBehaviour {
 		Destroy(gameObject);
 	}
 
+
 	private void callDestroy()
 	{
 		// Shake screen

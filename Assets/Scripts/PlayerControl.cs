@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerControl : MonoBehaviour {
 
@@ -9,7 +10,7 @@ public class PlayerControl : MonoBehaviour {
 	private Humanoid player;
 
 	private Transform sight;
-	private float facingAngle = 0;
+	private float rotateAngle = 0;
 	#endregion
 
 	void Start() {
@@ -48,23 +49,23 @@ public class PlayerControl : MonoBehaviour {
 	#endregion
 
 	#region TriggerEvents
-	// Check colisions each frame
-	void OnTriggerEnter2D(Collider2D other) {
-		Transform target = other.gameObject.transform;
+	// Set up a list to keep track of targets
 
-		Vector3 v = transform.position - target.position;
-		float angleOfTarget = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
-		float anglediff = (facingAngle - angleOfTarget + 180) % 360 - 180;
-
-		if (target.tag == "Pickup" && player.picking == false && player.pickedItem == null) 
-		{
-			player.pickedItem = target;
+	// If a new enemy enters the trigger, add it to the list of targets
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.CompareTag("Pickup")) {
+			GameObject go = other.gameObject;
+			if(!player.targets.Contains(go)){
+				player.targets.Add(go);
+			}
 		}
-		Debug.Log (target.name + "Angle: " + angleOfTarget);
 	}
-	void OnTriggerExit2D() {
-		if (player.picking == false) {
-			player.pickedItem = null;
+
+	// When an enemy exits the trigger, remove it from the list
+	void OnTriggerExit2D(Collider2D other) {
+		if (other.CompareTag("Pickup")) {
+			GameObject go = other.gameObject;
+			player.targets.Remove(go);
 		}
 	}
 	#endregion
@@ -73,17 +74,21 @@ public class PlayerControl : MonoBehaviour {
 		if (player.walking) 
 		{	
 			// Rotate the Sight
-			if (player.lookDirY <= 0 && player.lookDirX == 1 ) {
-				facingAngle = 90;
-			} else if (player.lookDirY <= 0 && player.lookDirX == -1 ) {
-				facingAngle = 270;
-			} else if (player.lookDirY == -1 && player.lookDirX == 0) {
-				facingAngle = 0;
-			} else if (player.lookDirY == 1) {
-				facingAngle = 180;
+			if (player.lookDirY <= 0 && player.lookDirX == 1 ) { // Right
+				rotateAngle = 90;
+				player.facingAngle = 0;
+			} else if (player.lookDirY <= 0 && player.lookDirX == -1 ) { // Left
+				rotateAngle = 270;
+				player.facingAngle = 180;
+			} else if (player.lookDirY == -1 && player.lookDirX == 0) { // Down
+				rotateAngle = 0;
+				player.facingAngle = 270;
+			} else if (player.lookDirY == 1) { // Up
+				rotateAngle = 180;
+				player.facingAngle = 90;
 			}
 
-			sight.rotation = Quaternion.Euler(0, 0, facingAngle);
+			sight.rotation = Quaternion.Euler(0, 0, rotateAngle);
 		}
 	}
 }
