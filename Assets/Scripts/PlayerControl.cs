@@ -31,6 +31,9 @@ public class PlayerControl : MonoBehaviour {
 		);
 		// Rotate Sight
 		RotateSight(player.lookDirX, player.lookDirY);
+
+		player.UpdateOnRange();
+		player.GetMinAngleObj();
 	}
 	// Update each frame * deltaTime
 	void FixedUpdate()
@@ -59,6 +62,11 @@ public class PlayerControl : MonoBehaviour {
 				player.targets.Add(go);
 			}
 		}
+		// Test New Object
+		GameObject range = other.gameObject;
+		if(!player.ranges.Contains(new RangeObject(range))){
+			player.ranges.Add(new RangeObject(range));
+		}
 	}
 
 	// When an enemy exits the trigger, remove it from the list
@@ -67,6 +75,10 @@ public class PlayerControl : MonoBehaviour {
 			GameObject go = other.gameObject;
 			player.targets.Remove(go);
 		}
+
+		// Test New Object
+		GameObject range = other.gameObject;
+		player.ranges.Remove(new RangeObject(range));
 	}
 	#endregion
 	

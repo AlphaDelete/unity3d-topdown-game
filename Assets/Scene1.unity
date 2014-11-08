@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 8274478}
   - 212: {fileID: 8274479}
+  - 61: {fileID: 8274480}
   m_Layer: 8
   m_Name: Tile_dungeon_6
   m_TagString: Untagged
@@ -124,6 +125,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &8274480
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8274477}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &31064432
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +145,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 31064433}
   - 212: {fileID: 31064434}
+  - 61: {fileID: 31064435}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -174,6 +187,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &31064435
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 31064432}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &101514913
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +207,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 101514914}
   - 212: {fileID: 101514915}
+  - 61: {fileID: 101514916}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -224,6 +249,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &101514916
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 101514913}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &123797306
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +269,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 123797307}
   - 212: {fileID: 123797308}
+  - 61: {fileID: 123797309}
   m_Layer: 8
   m_Name: Tile_dungeon_6
   m_TagString: Untagged
@@ -274,6 +311,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &123797309
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 123797306}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &170545974
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +331,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 170545975}
   - 212: {fileID: 170545976}
+  - 61: {fileID: 170545977}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -324,6 +373,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &170545977
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 170545974}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &193022102
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +435,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 321971471}
   - 212: {fileID: 321971472}
+  - 61: {fileID: 321971473}
   m_Layer: 8
   m_Name: Tile_dungeon_11
   m_TagString: Untagged
@@ -416,6 +477,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &321971473
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 321971470}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &343530430
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +497,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 343530431}
   - 212: {fileID: 343530432}
+  - 61: {fileID: 343530433}
   m_Layer: 8
   m_Name: Tile_dungeon_11
   m_TagString: Untagged
@@ -466,6 +539,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &343530433
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 343530430}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &344686185
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +559,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 344686186}
   - 212: {fileID: 344686187}
+  - 61: {fileID: 344686188}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -516,6 +601,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &344686188
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344686185}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &392464645
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +621,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 392464646}
   - 212: {fileID: 392464647}
+  - 61: {fileID: 392464648}
   m_Layer: 8
   m_Name: Tile_dungeon_11
   m_TagString: Untagged
@@ -566,6 +663,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &392464648
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 392464645}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &394224751
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +683,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 394224752}
   - 212: {fileID: 394224753}
+  - 61: {fileID: 394224754}
   m_Layer: 8
   m_Name: Tile_dungeon_11
   m_TagString: Untagged
@@ -616,6 +725,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &394224754
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 394224751}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &400729466
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +795,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 406535108}
   - 212: {fileID: 406535109}
+  - 61: {fileID: 406535110}
   m_Layer: 8
   m_Name: Tile_dungeon_6
   m_TagString: Untagged
@@ -716,6 +837,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &406535110
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 406535107}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &431628491
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +857,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 431628492}
   - 212: {fileID: 431628493}
+  - 61: {fileID: 431628494}
   m_Layer: 8
   m_Name: Tile_dungeon_11
   m_TagString: Untagged
@@ -766,6 +899,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &431628494
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 431628491}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &454451040
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,8 +968,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 459039704}
-  - 61: {fileID: 459039706}
-  - 50: {fileID: 459039705}
   m_Layer: 8
   m_Name: DownWall
   m_TagString: Untagged
@@ -857,32 +999,6 @@ Transform:
   - {fileID: 559237180}
   m_Father: {fileID: 659175685}
   m_RootOrder: 3
---- !u!50 &459039705
-Rigidbody2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 459039703}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_FixedAngle: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
---- !u!61 &459039706
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 459039703}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 10.1385851, y: 1.26569176}
-  m_Center: {x: 4.43421602, y: -7.90583324}
 --- !u!1 &466310967
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,8 +1007,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 466310968}
-  - 61: {fileID: 466310970}
-  - 50: {fileID: 466310969}
   m_Layer: 8
   m_Name: UpperWall
   m_TagString: Untagged
@@ -924,32 +1038,6 @@ Transform:
   - {fileID: 651097799}
   m_Father: {fileID: 659175685}
   m_RootOrder: 0
---- !u!50 &466310969
-Rigidbody2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 466310967}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_FixedAngle: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
---- !u!61 &466310970
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 466310967}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 10.1418467, y: 1.25301933}
-  m_Center: {x: 1.57606626, y: .0167369843}
 --- !u!1 &497795188
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,6 +1047,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 497795189}
   - 212: {fileID: 497795190}
+  - 61: {fileID: 497795191}
   m_Layer: 8
   m_Name: Tile_dungeon_5
   m_TagString: Untagged
@@ -1000,6 +1089,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &497795191
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 497795188}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &518400444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,6 +1109,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 518400445}
   - 212: {fileID: 518400446}
+  - 61: {fileID: 518400447}
   m_Layer: 8
   m_Name: Tile_dungeon_6
   m_TagString: Untagged
@@ -1050,6 +1151,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &518400447
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 518400444}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &545675965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1171,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 545675966}
   - 212: {fileID: 545675967}
+  - 61: {fileID: 545675968}
   m_Layer: 8
   m_Name: Tile_dungeon_6
   m_TagString: Untagged
@@ -1100,6 +1213,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &545675968
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545675965}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &548201039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,8 +1232,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 548201040}
-  - 61: {fileID: 548201042}
-  - 50: {fileID: 548201041}
   m_Layer: 8
   m_Name: RightWall
   m_TagString: Untagged
@@ -1142,32 +1264,6 @@ Transform:
   - {fileID: 518400445}
   m_Father: {fileID: 659175685}
   m_RootOrder: 2
---- !u!50 &548201041
-Rigidbody2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 548201039}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_FixedAngle: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
---- !u!61 &548201042
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 548201039}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 1.24445343, y: 9.16379738}
-  m_Center: {x: 8.89190674, y: -3.94111919}
 --- !u!1 &559237179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1273,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 559237180}
   - 212: {fileID: 559237181}
+  - 61: {fileID: 559237182}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -1218,6 +1315,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &559237182
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 559237179}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &647531017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,6 +1335,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 647531018}
   - 212: {fileID: 647531019}
+  - 61: {fileID: 647531020}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -1268,6 +1377,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &647531020
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 647531017}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &651097798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,6 +1397,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 651097799}
   - 212: {fileID: 651097800}
+  - 61: {fileID: 651097801}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -1318,6 +1439,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &651097801
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 651097798}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &659175684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,6 +1600,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 687068912}
   - 212: {fileID: 687068913}
+  - 61: {fileID: 687068914}
   m_Layer: 8
   m_Name: Tile_dungeon_11
   m_TagString: Untagged
@@ -1509,6 +1642,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &687068914
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687068911}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &889969890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1662,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 889969891}
   - 212: {fileID: 889969892}
+  - 61: {fileID: 889969893}
   m_Layer: 8
   m_Name: Tile_dungeon_11
   m_TagString: Untagged
@@ -1559,6 +1704,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &889969893
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 889969890}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &918125188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1833,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 952853479}
   - 212: {fileID: 952853480}
+  - 61: {fileID: 952853481}
   m_Layer: 8
   m_Name: Tile_dungeon_11
   m_TagString: Untagged
@@ -1718,6 +1875,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &952853481
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952853478}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &990050640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,6 +1895,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 990050641}
   - 212: {fileID: 990050642}
+  - 61: {fileID: 990050643}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -1768,6 +1937,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &990050643
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 990050640}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1081212403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,6 +1957,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1081212404}
   - 212: {fileID: 1081212405}
+  - 61: {fileID: 1081212406}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -1818,6 +1999,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1081212406
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1081212403}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1082126233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,6 +2019,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1082126234}
   - 212: {fileID: 1082126235}
+  - 61: {fileID: 1082126236}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -1868,6 +2061,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1082126236
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1082126233}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1109437000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,8 +2080,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1109437001}
-  - 61: {fileID: 1109437003}
-  - 50: {fileID: 1109437002}
   m_Layer: 8
   m_Name: LeftWall
   m_TagString: Untagged
@@ -1910,32 +2112,6 @@ Transform:
   - {fileID: 321971471}
   m_Father: {fileID: 659175685}
   m_RootOrder: 1
---- !u!50 &1109437002
-Rigidbody2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1109437000}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_FixedAngle: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
---- !u!61 &1109437003
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1109437000}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 1.2393496, y: 8.16318035}
-  m_Center: {x: -.0150957108, y: -3.44125891}
 --- !u!1 &1182739537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,6 +2121,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1182739538}
   - 212: {fileID: 1182739539}
+  - 61: {fileID: 1182739540}
   m_Layer: 8
   m_Name: Tile_dungeon_6
   m_TagString: Untagged
@@ -1986,6 +2163,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1182739540
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182739537}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1204542080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,6 +2183,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1204542081}
   - 212: {fileID: 1204542082}
+  - 61: {fileID: 1204542083}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -2036,6 +2225,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1204542083
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1204542080}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1205519534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,6 +2245,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1205519535}
   - 212: {fileID: 1205519536}
+  - 61: {fileID: 1205519537}
   m_Layer: 8
   m_Name: Tile_dungeon_0
   m_TagString: Untagged
@@ -2086,6 +2287,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1205519537
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1205519534}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1244192425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,6 +2307,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1244192426}
   - 212: {fileID: 1244192427}
+  - 61: {fileID: 1244192428}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -2136,6 +2349,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1244192428
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1244192425}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1254090807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,6 +2369,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1254090808}
   - 212: {fileID: 1254090809}
+  - 61: {fileID: 1254090810}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -2186,6 +2411,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1254090810
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1254090807}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1261160052
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,6 +2431,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1261160053}
   - 212: {fileID: 1261160054}
+  - 61: {fileID: 1261160055}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -2236,6 +2473,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1261160055
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261160052}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1396672995
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,6 +2493,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1396672996}
   - 212: {fileID: 1396672997}
+  - 61: {fileID: 1396672998}
   m_Layer: 8
   m_Name: Tile_dungeon_10
   m_TagString: Untagged
@@ -2286,6 +2535,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300020, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1396672998
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396672995}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1397182434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,6 +2605,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1399998510}
   - 212: {fileID: 1399998511}
+  - 61: {fileID: 1399998512}
   m_Layer: 8
   m_Name: Tile_dungeon_6
   m_TagString: Untagged
@@ -2386,6 +2647,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1399998512
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1399998509}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1410585876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2445,6 +2717,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1448637338}
   - 212: {fileID: 1448637339}
+  - 61: {fileID: 1448637340}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -2486,6 +2759,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1448637340
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1448637337}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1475361049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2604,6 +2888,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1488288134}
   - 212: {fileID: 1488288135}
+  - 61: {fileID: 1488288136}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -2645,6 +2930,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1488288136
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1488288133}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1489512671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,6 +2950,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1489512672}
   - 212: {fileID: 1489512673}
+  - 61: {fileID: 1489512674}
   m_Layer: 8
   m_Name: Tile_dungeon_6
   m_TagString: Untagged
@@ -2695,6 +2992,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1489512674
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489512671}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1509172824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2704,6 +3012,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1509172825}
   - 212: {fileID: 1509172826}
+  - 61: {fileID: 1509172827}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -2745,6 +3054,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1509172827
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1509172824}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1525671250
 GameObject:
   m_ObjectHideFlags: 0
@@ -2754,6 +3074,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1525671251}
   - 212: {fileID: 1525671252}
+  - 61: {fileID: 1525671253}
   m_Layer: 8
   m_Name: Tile_dungeon_11
   m_TagString: Untagged
@@ -2795,6 +3116,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1525671253
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1525671250}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1648921728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,6 +3136,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1648921729}
   - 212: {fileID: 1648921730}
+  - 61: {fileID: 1648921731}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -2845,6 +3178,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1648921731
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1648921728}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1742991714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,6 +3307,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1757025120}
   - 212: {fileID: 1757025121}
+  - 61: {fileID: 1757025122}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -3004,6 +3349,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1757025122
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1757025119}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1775699217
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,6 +3369,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1775699218}
   - 212: {fileID: 1775699219}
+  - 61: {fileID: 1775699220}
   m_Layer: 8
   m_Name: Tile_dungeon_7
   m_TagString: Untagged
@@ -3054,6 +3411,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1775699220
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1775699217}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1820025140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3063,6 +3431,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1820025141}
   - 212: {fileID: 1820025142}
+  - 61: {fileID: 1820025143}
   m_Layer: 8
   m_Name: Tile_dungeon_6
   m_TagString: Untagged
@@ -3104,6 +3473,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1820025143
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1820025140}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1825040783
 GameObject:
   m_ObjectHideFlags: 0
@@ -3113,6 +3493,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1825040784}
   - 212: {fileID: 1825040785}
+  - 61: {fileID: 1825040786}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -3154,6 +3535,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1825040786
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1825040783}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1848744043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,6 +3605,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1906849301}
   - 212: {fileID: 1906849302}
+  - 61: {fileID: 1906849303}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -3254,6 +3647,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1906849303
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1906849300}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1970267871
 GameObject:
   m_ObjectHideFlags: 0
@@ -3370,6 +3774,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1974475415}
   - 212: {fileID: 1974475416}
+  - 61: {fileID: 1974475417}
   m_Layer: 8
   m_Name: Tile_dungeon_11
   m_TagString: Untagged
@@ -3411,6 +3816,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1974475417
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1974475414}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1986652120
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,6 +3836,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1986652121}
   - 212: {fileID: 1986652122}
+  - 61: {fileID: 1986652123}
   m_Layer: 8
   m_Name: Tile_dungeon_6
   m_TagString: Untagged
@@ -3461,6 +3878,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1986652123
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986652120}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 2.38418579e-07}
 --- !u!1 &1995464467
 GameObject:
   m_ObjectHideFlags: 0
@@ -3470,6 +3898,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1995464468}
   - 212: {fileID: 1995464469}
+  - 61: {fileID: 1995464470}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -3511,6 +3940,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1995464470
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1995464467}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!1 &2008384200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3616,6 +4056,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2020159050}
   - 212: {fileID: 2020159051}
+  - 61: {fileID: 2020159052}
   m_Layer: 8
   m_Name: Tile_dungeon_6
   m_TagString: Untagged
@@ -3657,6 +4098,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &2020159052
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2020159049}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &2024213711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3666,6 +4118,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2024213713}
   - 212: {fileID: 2024213712}
+  - 61: {fileID: 2024213714}
   m_Layer: 8
   m_Name: Tile_dungeon_8
   m_TagString: Untagged
@@ -3707,6 +4160,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 459039704}
   m_RootOrder: 2
+--- !u!61 &2024213714
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2024213711}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &2036420229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,6 +4180,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2036420230}
   - 212: {fileID: 2036420231}
+  - 61: {fileID: 2036420232}
   m_Layer: 8
   m_Name: Tile_dungeon_11
   m_TagString: Untagged
@@ -3757,6 +4222,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &2036420232
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2036420229}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.27999997, y: .639999986}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &2040556199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3826,6 +4302,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2074854277}
   - 212: {fileID: 2074854278}
+  - 61: {fileID: 2074854279}
   m_Layer: 8
   m_Name: Tile_dungeon_1
   m_TagString: Untagged
@@ -3867,6 +4344,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 21ce38ff0af2ee04f8713183c712e028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &2074854279
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2074854276}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &2122075914
 GameObject:
   m_ObjectHideFlags: 0
@@ -3881,7 +4369,7 @@ GameObject:
   - 114: {fileID: 2122075916}
   - 95: {fileID: 2122075915}
   m_Layer: 9
-  m_Name: Jar
+  m_Name: Jar2
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

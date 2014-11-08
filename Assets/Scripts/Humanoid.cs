@@ -75,6 +75,7 @@ public class Humanoid
 	private RaycastHit2D _hit;
 	public float facingAngle = 0;
 	public List<GameObject> targets = new List<GameObject>();
+	public List<RangeObject> ranges = new List<RangeObject>();
 	#endregion
 
 	#region Initial Instance
@@ -183,35 +184,6 @@ public class Humanoid
 			}
 		}
 	}
-
-	private Transform CheckPickupItens() {
-		Transform picked = null;
-		// Foreach collided object in list
-		foreach (GameObject target in targets)
-		{
-			if (target != null) {
-				// Declare the FOV angle.
-				float sightFovAngle = 60;
-				// Center of the “looker” is the origin (0, 0).
-				Vector2 v = new Vector2(target.transform.position.x - _obj.transform.position.x, target.transform.position.y - _obj.transform.position.y);
-				// For each nearby object, use atan2 to compute the angle from the looker “to” this object.
-				float angleOfTarget = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
-				// Calculate the difference between the looker’s facing angle and the object’s angle.
-				float anglediff = Mathf.Abs((facingAngle - angleOfTarget + 180) % 360 - 180);
-				// Check for Field of View (FOV)
-				if ( anglediff <= sightFovAngle / 2)
-				{
-					// Check if object is in pickup range
-					if (target.transform.tag == "Pickup" && _picking == false)
-					{
-						// Set to return
-						picked = target.transform;
-					}
-				}
-			}
-		}
-		return picked;
-	}
 	
 	private void SetDrop() {
 		// Check if its near of some wall via raycast
@@ -249,6 +221,35 @@ public class Humanoid
 			_pickedItem = null;
 			_picking = false;
 		}
+	}
+
+	private Transform CheckPickupItens() {
+		Transform picked = null;
+		// Foreach collided object in list
+		foreach (GameObject target in targets)
+		{
+			if (target != null) {
+				// Declare the FOV angle.
+				float sightFovAngle = 60;
+				// Center of the “looker” is the origin (0, 0).
+				Vector2 v = new Vector2(target.transform.position.x - _obj.transform.position.x, target.transform.position.y - _obj.transform.position.y);
+				// For each nearby object, use atan2 to compute the angle from the looker “to” this object.
+				float angleOfTarget = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+				// Calculate the difference between the looker’s facing angle and the object’s angle.
+				float anglediff = Mathf.Abs((facingAngle - angleOfTarget + 180) % 360 - 180);
+				// Check for Field of View (FOV)
+				if ( anglediff <= sightFovAngle / 2)
+				{
+					// Check if object is in pickup range
+					if (target.transform.tag == "Pickup" && _picking == false)
+					{
+						// Set to return
+						picked = target.transform;
+					}
+				}
+			}
+		}
+		return picked;
 	}
 
 	private float CheckCanDrop(){
@@ -347,6 +348,72 @@ public class Humanoid
 		objectBoost.rigidbody2D.velocity = new Vector2(0, 0);
 	}
 	#endregion
+
+	#region RangeObjects
+	
+	public void UpdateOnRange() {
+		if (ranges != null && ranges.Count != 0) {
+			// Garbage remove in the list
+			ranges.RemoveAll(item => item.RangeGameObject == null);
+			// Foreach collided object in list
+			foreach (RangeObject range in ranges)
+			{
+				if (range.RangeGameObject != null) {
+					
+					// Calculate the difference between the looker’s facing angle and the object’s angle.
+					range.RangeAngle = SetAngle(range.RangeGameObject.transform);
+					// Calculate the difference between the looker’s facing distance and the object’s distance.
+					range.RangeDistance = SetDistance(range.RangeGameObject.transform);
+				}
+			}
+		}
+	}
+
+	public RangeObject GetMinAngleObj(){
+		RangeObject objReturn = null;
+		if (ranges != null && ranges.Count != 0) {
+			float minAngle = ranges[0].RangeAngle;
+			int minIndex = 0;
+			
+			for (int i = 1; i < ranges.Count; ++i) {
+				if (ranges[i].RangeAngle < minAngle) {
+					minAngle = ranges[i].RangeDistance;
+					minIndex = i;
+				}
+			}
+			objReturn = ranges[minIndex];
+			Debug.Log(objReturn.RangeGameObject.name + " : " + objReturn.RangeAngle);
+		}
+		return objReturn;
+	}
+
+	private float SetAngle(Transform range){
+		float angle = 0;
+		// Center of the “looker” is the origin (0, 0).
+		Vector2 v = new Vector2(range.position.x - _obj.transform.position.x, range.position.y - _obj.transform.position.y);
+		// For each nearby object, use atan2 to compute the angle from the looker “to” this object.
+		float angleOfTarget = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+		angle =  Mathf.Abs((facingAngle - angleOfTarget + 180) % 360 - 180);
+
+		return angle;
+	}
+
+	private float SetDistance(Transform range){
+		float distance = 0;
+		// Check distance
+		if (_lookDirY <= 0 && _lookDirX == 1 ) { // Right
+			distance = Mathf.Abs(range.position.x - _obj.collider2D.transform.position.x);
+		} else if (_lookDirY <= 0 && _lookDirX == -1 ) { // Left
+			distance = Mathf.Abs(range.position.x - _obj.collider2D.transform.position.x);
+		} else if (_lookDirY == -1 && _lookDirX == 0) { // Down
+			distance = Mathf.Abs(range.position.y - _obj.collider2D.transform.position.y);
+		} else if (_lookDirY == 1) { // Up
+			distance = Mathf.Abs(range.position.y - _obj.collider2D.transform.position.y);
+		}
+		return distance;
+	}
+	#endregion
+
 
 	#endregion
 }
