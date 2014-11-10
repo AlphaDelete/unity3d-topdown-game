@@ -1,6 +1,7 @@
 # README #
 
 Progress: [Dev blog](http://alphadelete.tumblr.com/)
+
 ### Top Down - Unity2D Game ###
 
 * Codename: Jar Breaker
@@ -14,12 +15,14 @@ Progress: [Dev blog](http://alphadelete.tumblr.com/)
 6. Get the main objective keys to open final door;
 7. Many way to finish a dungeon;
 8. Many achievements per dungeon.
+
 ### Next Challenges ###
 
 + Enemies
 * Animations
 * IA
 * Attack
+
 ### Backlog Status ###
 
 *Be a total loser; [OK]
@@ -44,6 +47,7 @@ Progress: [Dev blog](http://alphadelete.tumblr.com/)
 *Button Triggers / Doors;
 *Create Levels via XML;
 *First release.
+
 ### Team ###
 
 ####Programer
