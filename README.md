@@ -1,29 +1,59 @@
 # README #
 
+Progress: [Dev blog](http://alphadelete.tumblr.com/)
+
 ### Top Down - Unity2D Game ###
 
-* Codename: Samurai Breaker
-* Quick summary
-The main idea of the game is
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Codename: Jar Breaker
+* Main idea:
 
-### How do I get set up? ###
+1. Main Inspiration: Zelda - Link to the Past;
+2. Simple Game: Player, Jars, Enemies, Triggers, Doors and Keys;
+3. Time trial dungeons;
+4. Jars + Trigger = Keys;
+5. Loose few jars, do it fast!;
+6. Get the main objective keys to open final door;
+7. Many way to finish a dungeon;
+8. Many achievements per dungeon.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Next Challenges ###
 
-### Contribution guidelines ###
++ Enemies
+* Animations
+* IA
+* Attack
 
-* Writing tests
-* Code review
-* Other guidelines
+### Backlog Status ###
 
-### Who do I talk to? ###
+*Be a total loser; [OK]
+*Get depressed; [OK]
+*Start looking for change my life; [OK]
+*Find about Unity3d; [OK]
+*Start study; [OK]
+*Create a New Project in Unity; [OK]
+*Find Sprites; [OK]
+*Animate Sprites; [OK]
+*Player Movement; [OK]
+*Make it collide; [OK]
+*Attack animations; [OK]
+*Screen shake; [OK]
+*Pickup/Drop Pots; [OK]
+*Throw Pots; [OK]
+*Pickup/Attack on the right angle; [OK]
+*Attack/Destroy Pots; [OK]
+*Enemies; [Working...]
+*Enemies Path Find;
+*Combat System;
+*Button Triggers / Doors;
+*Create Levels via XML;
+*First release.
 
-* Repo owner or admin
-* Other community or team contact
+### Team ###
+
+####Programer
+
+[Alpha Delete](alphadelete@gmail.com)
+
+####Art
+
+???
