@@ -19,34 +19,34 @@ Progress: [Dev blog](http://alphadelete.tumblr.com/)
 ### Next Challenges ###
 
 + Enemies
-* Animations
-* IA
-* Attack
+    * Animations
+    * IA
+    * Attack
 
 ### Backlog Status ###
 
-*Be a total loser; [OK]
-*Get depressed; [OK]
-*Start looking for change my life; [OK]
-*Find about Unity3d; [OK]
-*Start study; [OK]
-*Create a New Project in Unity; [OK]
-*Find Sprites; [OK]
-*Animate Sprites; [OK]
-*Player Movement; [OK]
-*Make it collide; [OK]
-*Attack animations; [OK]
-*Screen shake; [OK]
-*Pickup/Drop Pots; [OK]
-*Throw Pots; [OK]
-*Pickup/Attack on the right angle; [OK]
-*Attack/Destroy Pots; [OK]
-*Enemies; [Working...]
-*Enemies Path Find;
-*Combat System;
-*Button Triggers / Doors;
-*Create Levels via XML;
-*First release.
+* Be a total loser; [OK]
+* Get depressed; [OK]
+* Start looking for change my life; [OK]
+* Find about Unity3d; [OK]
+* Start study; [OK]
+* Create a New Project in Unity; [OK]
+* Find Sprites; [OK]
+* Animate Sprites; [OK]
+* Player Movement; [OK]
+* Make it collide; [OK]
+* Attack animations; [OK]
+* Screen shake; [OK]
+* Pickup/Drop Pots; [OK]
+* Throw Pots; [OK]
+* Pickup/Attack on the right angle; [OK]
+* Attack/Destroy Pots; [OK]
+* Enemies; [Working...]
+* Enemies Path Find;
+* Combat System;
+* Button Triggers / Doors;
+* Create Levels via XML;
+* First release.
 
 ### Team ###
 
