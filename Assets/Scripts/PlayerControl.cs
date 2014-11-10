@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour {
 	#region Properties
 	private Animator anim;
 	private SpriteRenderer sprite;
-	private Humanoid player;
+	private Player player;
 
 	private Transform sight;
 	private float rotateAngle = 0;
@@ -17,7 +17,7 @@ public class PlayerControl : MonoBehaviour {
 		sight = transform.Find("Sight");
 		anim = GetComponent<Animator>();
 		sprite = GetComponent<SpriteRenderer>();
-		player = new Humanoid(this, anim, sprite, 4F);
+		player = new Player(this, anim, sprite, 4F);
 	}
 
 	#region OnFrameUpdate
