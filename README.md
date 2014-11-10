@@ -52,7 +52,7 @@ Progress: [Dev blog](http://alphadelete.tumblr.com/)
 
 ####Programer
 
-[Alpha Delete](alphadelete@gmail.com)
+Alpha Delete _(alphadelete@gmail.com)_
 
 ####Art
 
