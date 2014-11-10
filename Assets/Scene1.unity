@@ -1496,7 +1496,7 @@ GameObject:
   - 114: {fileID: 680828531}
   - 95: {fileID: 680828530}
   m_Layer: 9
-  m_Name: Jar
+  m_Name: Jar4
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2784,7 +2784,7 @@ GameObject:
   - 114: {fileID: 1475361051}
   - 95: {fileID: 1475361050}
   m_Layer: 9
-  m_Name: Jar
+  m_Name: Jar3
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3203,7 +3203,7 @@ GameObject:
   - 114: {fileID: 1742991716}
   - 95: {fileID: 1742991715}
   m_Layer: 9
-  m_Name: Jar
+  m_Name: Jar5
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

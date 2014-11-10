@@ -36,7 +36,7 @@ public class PickupItem : MonoBehaviour {
 	}
 
 
-	private void callDestroy()
+	public void callDestroy()
 	{
 		// Shake screen
 		StartCoroutine(CameraMovement.shakeCamera(0.3F, 0.015F));

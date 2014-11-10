@@ -56,8 +56,8 @@ public class Humanoid
 		// Store the value in the field.
 		set { _picking = value; }
 	}
-	private Transform _pickedItem;
-	public Transform pickedItem
+	private GameObject _pickedItem;
+	public GameObject pickedItem
 	{
 		// Return the value stored in a field.
 		get { return _pickedItem; }
@@ -74,7 +74,6 @@ public class Humanoid
 	}
 	private RaycastHit2D _hit;
 	public float facingAngle = 0;
-	public List<GameObject> targets = new List<GameObject>();
 	public List<RangeObject> ranges = new List<RangeObject>();
 	#endregion
 
@@ -132,8 +131,9 @@ public class Humanoid
 			// Set the attack anim
 			_attacking = 1;
 			_attackTimer = _timerAtk;
-			// Set camera to shake (Second, Magnitude)
-			if (CameraMovement.isShaking < 2) _obj.StartCoroutine(CameraMovement.shakeCamera(0.3F, 0.015F));
+			// Search & Attack all range objects
+			AttackRangeObj(0.25f);
+
 		}
 		
 		if(_attackTimer > 0)
@@ -149,8 +149,6 @@ public class Humanoid
 
 	#region GrabThrow
 	public void SetGrabThrow(bool ButtonDown) {
-		// Clear the list
-		targets.RemoveAll(item => item == null);
 		// Check of button input
 		if (ButtonDown && _attacking == 0 && _picking == false) {
 			SetGrab();
@@ -166,11 +164,12 @@ public class Humanoid
 	
 	private void SetGrab() {
 		// If there any itens in the target list
-		if(targets.Count > 0) 
+		if(ranges.Count > 0) 
 		{
+			RangeObject picking = GetMinAngleObj("Pickup");
 			// Check if are some pickup itens in list
-			_pickedItem = CheckPickupItens();
-			if (_pickedItem != null) {
+			_pickedItem = picking.RangeGameObject;
+			if (_pickedItem != null && _pickedItem.tag == "Pickup") {
 				// Set picking animation
 				_picking = true;
 				// Change picked item layer & configs to drag
@@ -181,31 +180,54 @@ public class Humanoid
 				_pickedItem.transform.parent = _obj.transform; 
 				// Move item to the players head
 				_pickedItem.transform.localPosition = new Vector3(0, 0.6f, 0);
+				//Remove it on the range objects list
+				//ranges.Remove(new RangeObject(_pickedItem));
 			}
 		}
 	}
 	
 	private void SetDrop() {
-		// Check if its near of some wall via raycast
-		if(CheckCanDrop() > 0.4) {
+		// Check if its near of some wall or object 
+		float nearDistantObject = GetMinDistanceObj("") != null ? GetMinDistanceObj("").RangeDistance : 1;
+		float nearAngleObject = GetMinDistanceObj("") != null ? GetMinDistanceObj("").RangeAngle : 0;
+		string nearTagObject =  GetMinDistanceObj("") != null ? GetMinDistanceObj("").RangeGameObject.tag : "";
+		bool canDrop = false;
+
+		// Check if I can drop the item
+		if (nearDistantObject > 0.25) {
+			canDrop = true;
+		} else if((nearAngleObject > 20 || nearAngleObject == 0) && nearTagObject == "Pickup") {
+			canDrop = true;
+		} else {
+			canDrop = false;
+		}
+
+		if(canDrop) {
 			// Remove Item from player parent 
 			_pickedItem.transform.parent = null;
 			_pickedItem.rigidbody2D.isKinematic = true;
-			
+
+			BoxCollider2D pick = (BoxCollider2D)_pickedItem.rigidbody2D.collider2D;
+			BoxCollider2D user = (BoxCollider2D)_obj.collider2D;
+
+			// Get Collider Diference
+			float colliderSizeX = (pick.center + new Vector2(pick.size.x * 0.5f, 0)).x + ((user.center * _lookDirX) + new Vector2(user.size.x * 0.5f, 0)).x;
+			float colliderSizeY = ((pick.center * (-_lookDirY)) + new Vector2(0, pick.size.y * 0.5f)).y + ((user.center * _lookDirY) + new Vector2(0, user.size.y * 0.5f)).y;
 			//Set New Position to drop item
 			float newY, newX;
+
 			if (_lookDirY == -1) {
 				// Looking up: Use Player Collider Size + Y position
-				newY = (_obj.transform.collider2D.bounds.size.y + 0.02f) * -1F;
+				newY = (colliderSizeY + 0.02f) * -1F;
 			} else if (_lookDirY == 1) {
 				// Looking down: Use item Collider Size + Y position
-				newY = _pickedItem.collider2D.bounds.size.y + 0.02f;
+				newY = colliderSizeY + 0.02f;
 			} else {
 				// Adjust object to the player foot
-				newY = (_obj.transform.collider2D.bounds.size.y - _pickedItem.collider2D.bounds.size.y) * -1;
+				newY = (user.bounds.size.y - pick.bounds.size.y) * -1;
 			}
 			// Since X collider is in X = 0, the logis is simplier
-			newX = (_pickedItem.collider2D.bounds.size.x + 0.02f) * _lookDirX;
+			newX = (colliderSizeX + 0.02f) * _lookDirX;
 			//Set New Position to drop item
 			_pickedItem.rigidbody2D.position = 
 				new Vector2(
@@ -217,71 +239,12 @@ public class Humanoid
 			_pickedItem.GetComponent<SpriteRenderer>().sortingLayerName = "Player";
 			// Adjust Object Order
 			_pickedItem.GetComponent<SpriteRenderer>().sortingOrder = (int)((10 * ((_obj.transform.position.y + (_lookDirY*0.25f))  * -1)));
+			//Put it on the range objects list
+			//ranges.Add(new RangeObject(_pickedItem));
 			// Set no item is picked
 			_pickedItem = null;
 			_picking = false;
 		}
-	}
-
-	private Transform CheckPickupItens() {
-		Transform picked = null;
-		// Foreach collided object in list
-		foreach (GameObject target in targets)
-		{
-			if (target != null) {
-				// Declare the FOV angle.
-				float sightFovAngle = 60;
-				// Center of the “looker” is the origin (0, 0).
-				Vector2 v = new Vector2(target.transform.position.x - _obj.transform.position.x, target.transform.position.y - _obj.transform.position.y);
-				// For each nearby object, use atan2 to compute the angle from the looker “to” this object.
-				float angleOfTarget = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
-				// Calculate the difference between the looker’s facing angle and the object’s angle.
-				float anglediff = Mathf.Abs((facingAngle - angleOfTarget + 180) % 360 - 180);
-				// Check for Field of View (FOV)
-				if ( anglediff <= sightFovAngle / 2)
-				{
-					// Check if object is in pickup range
-					if (target.transform.tag == "Pickup" && _picking == false)
-					{
-						// Set to return
-						picked = target.transform;
-					}
-				}
-			}
-		}
-		return picked;
-	}
-
-	private float CheckCanDrop(){
-		// Bit shift the index of the layer (11) to get a bit mask
-		var layerMask = 1 << 11;
-		// This would cast rays only against colliders in layer 11.
-		// But instead we want to collide against everything except layer 11. The ~ operator does this, it inverts a bitmask.
-		layerMask = ~layerMask;
-		float distance = 0;
-		// Send raycast on the player sight
-		if (_lookDirY <= 0 && _lookDirX == 1 ) { // Right
-			_hit = Physics2D.Raycast(_obj.transform.position, Vector2.right, 10, layerMask);
-		} else if (_lookDirY <= 0 && _lookDirX == -1 ) { // Left
-			_hit = Physics2D.Raycast(_obj.transform.position, -Vector2.right, 10, layerMask);
-		} else if (_lookDirY == -1 && _lookDirX == 0) { // Down
-			_hit = Physics2D.Raycast(_obj.transform.position, -Vector2.up, 10, layerMask);
-		} else if (_lookDirY == 1) { // Up
-			_hit = Physics2D.Raycast(_obj.transform.position, Vector2.up, 10, layerMask);
-		}
-		// Check hit
-		if (_hit.collider != null) {
-			if (_lookDirY <= 0 && _lookDirX == 1 ) { // Right
-				distance = Mathf.Abs(_hit.point.x - _obj.transform.position.x);
-			} else if (_lookDirY <= 0 && _lookDirX == -1 ) { // Left
-				distance = Mathf.Abs(_hit.point.x - _obj.transform.position.x);
-			} else if (_lookDirY == -1 && _lookDirX == 0) { // Down
-				distance = Mathf.Abs(_hit.point.y - _obj.transform.position.y);
-			} else if (_lookDirY == 1) { // Up
-				distance = Mathf.Abs(_hit.point.y - _obj.transform.position.y);
-			}
-		}
-		return distance;
 	}
 	
 	private void SetThrow() {
@@ -293,15 +256,15 @@ public class Humanoid
 		// Say to the item that it is been thrown
 		_pickedItem.GetComponent< PickupItem >().beenThrow = true;
 		//Set New Position to drop item
-		_obj.StartCoroutine( boostThrow(0.2f,_pickedItem) ); //Start the Coroutine called "Boost", and feed it the time we want it to boost us
+		_obj.StartCoroutine( boostThrow(0.2f,_pickedItem.transform) ); //Start the Coroutine called "Boost", and feed it the time we want it to boost us
 		
 		// Adjust Object Layer
 		_pickedItem.gameObject.layer = 9;
 		_pickedItem.GetComponent<SpriteRenderer>().sortingLayerName = "Player";
 		// Adjust Object Order
 		_pickedItem.GetComponent<SpriteRenderer>().sortingOrder = (int)((10 * ((_obj.transform.position.y + (_lookDirY*0.25f))  * -1)));
-		// Delete on target list
-		targets.Remove(_pickedItem.gameObject);
+		//Remove it on the range objects list
+		//ranges.Remove(new RangeObject(_pickedItem));
 		// Set no item is picked
 		_pickedItem = null;
 		_picking = false;
@@ -363,27 +326,73 @@ public class Humanoid
 					// Calculate the difference between the looker’s facing angle and the object’s angle.
 					range.RangeAngle = SetAngle(range.RangeGameObject.transform);
 					// Calculate the difference between the looker’s facing distance and the object’s distance.
-					range.RangeDistance = SetDistance(range.RangeGameObject.transform);
+					range.RangeDistance = SetDistance(range.RangeGameObject);
 				}
 			}
 		}
+
 	}
 
-	public RangeObject GetMinAngleObj(){
+	public void AttackRangeObj(float attackRange){
+		// Check all objects in the list
+		if (ranges != null && ranges.Count != 0) {
+			// Get the nearest angle object 
+			for (int i = 0; i < ranges.Count; ++i) {
+				if (ranges[i].RangeDistance < attackRange) {
+					if (ranges[i].RangeGameObject.tag == "Pickup")
+					{
+						// Destroy Jar
+						ranges[i].RangeGameObject.GetComponent< PickupItem >().callDestroy();
+						// Set camera to shake (Second, Magnitude)
+						if (CameraMovement.isShaking < 2) _obj.StartCoroutine(CameraMovement.shakeCamera(0.3F, 0.015F));
+					}	
+				}
+			}
+		}
+
+	}
+
+	public RangeObject GetMinAngleObj(string tag){
+		// Check all objects in the list
 		RangeObject objReturn = null;
 		if (ranges != null && ranges.Count != 0) {
 			float minAngle = ranges[0].RangeAngle;
 			int minIndex = 0;
-			
-			for (int i = 1; i < ranges.Count; ++i) {
-				if (ranges[i].RangeAngle < minAngle) {
-					minAngle = ranges[i].RangeDistance;
-					minIndex = i;
+			// Get the nearest angle object 
+			for (int i = 0; i < ranges.Count; ++i) {
+				if (ranges[i].RangeGameObject.tag == tag || tag == "")
+				{
+					if (ranges[i].RangeAngle < minAngle) {
+						minAngle = ranges[i].RangeAngle;
+						minIndex = i;
+					}
 				}
 			}
 			objReturn = ranges[minIndex];
-			Debug.Log(objReturn.RangeGameObject.name + " : " + objReturn.RangeAngle);
 		}
+		// Return the object
+		return objReturn;
+	}
+
+	private RangeObject GetMinDistanceObj(string tag){
+		// Check all objects in the list
+		RangeObject objReturn = null;
+		if (ranges != null && ranges.Count != 0) {
+			float minDistance = ranges[0].RangeDistance;
+			int minIndex = 0;
+			// Get the nearest object 
+			for (int i = 0; i < ranges.Count; ++i) {
+				if (ranges[i].RangeGameObject.tag == tag || tag == "")
+				{
+					if (ranges[i].RangeDistance < minDistance) {
+						minDistance = ranges[i].RangeDistance;
+						minIndex = i;
+					}
+				}
+			}
+			objReturn = ranges[minIndex];
+		}
+		// Return the distance
 		return objReturn;
 	}
 
@@ -398,20 +407,29 @@ public class Humanoid
 		return angle;
 	}
 
-	private float SetDistance(Transform range){
+	private float SetDistance(GameObject rangeObject){
 		float distance = 0;
+		BoxCollider2D range = (BoxCollider2D)rangeObject.collider2D;
+		BoxCollider2D user = (BoxCollider2D)_obj.collider2D;
+
+		// Get Collider Diference
+		float colliderSizeX = (range.center + new Vector2(range.size.x * 0.5f, 0)).x + ((user.center * _lookDirX) + new Vector2(user.size.x * 0.5f, 0)).x;
+		float colliderSizeY = ((range.center * -_lookDirY) + new Vector2(0, range.size.y * 0.5f)).y + ((user.center * _lookDirY) + new Vector2(0, user.size.y * 0.5f)).y;
+
 		// Check distance
 		if (_lookDirY <= 0 && _lookDirX == 1 ) { // Right
-			distance = Mathf.Abs(range.position.x - _obj.collider2D.transform.position.x);
+			distance = Mathf.Abs(Mathf.Abs(range.transform.position.x - _obj.collider2D.transform.position.x) - colliderSizeX);
 		} else if (_lookDirY <= 0 && _lookDirX == -1 ) { // Left
-			distance = Mathf.Abs(range.position.x - _obj.collider2D.transform.position.x);
+			distance = Mathf.Abs(Mathf.Abs(range.transform.position.x - _obj.collider2D.transform.position.x) - colliderSizeX);
 		} else if (_lookDirY == -1 && _lookDirX == 0) { // Down
-			distance = Mathf.Abs(range.position.y - _obj.collider2D.transform.position.y);
+			distance = Mathf.Abs(Mathf.Abs(range.transform.position.y - _obj.collider2D.transform.position.y) - colliderSizeY);
 		} else if (_lookDirY == 1) { // Up
-			distance = Mathf.Abs(range.position.y - _obj.collider2D.transform.position.y);
+			distance = Mathf.Abs(Mathf.Abs(range.transform.position.y - _obj.collider2D.transform.position.y) - colliderSizeY);
 		}
 		return distance;
 	}
+
+
 	#endregion
 
 

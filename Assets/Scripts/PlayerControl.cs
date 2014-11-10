@@ -33,7 +33,6 @@ public class PlayerControl : MonoBehaviour {
 		RotateSight(player.lookDirX, player.lookDirY);
 
 		player.UpdateOnRange();
-		player.GetMinAngleObj();
 	}
 	// Update each frame * deltaTime
 	void FixedUpdate()
@@ -56,12 +55,6 @@ public class PlayerControl : MonoBehaviour {
 
 	// If a new enemy enters the trigger, add it to the list of targets
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.CompareTag("Pickup")) {
-			GameObject go = other.gameObject;
-			if(!player.targets.Contains(go)){
-				player.targets.Add(go);
-			}
-		}
 		// Test New Object
 		GameObject range = other.gameObject;
 		if(!player.ranges.Contains(new RangeObject(range))){
@@ -71,11 +64,6 @@ public class PlayerControl : MonoBehaviour {
 
 	// When an enemy exits the trigger, remove it from the list
 	void OnTriggerExit2D(Collider2D other) {
-		if (other.CompareTag("Pickup")) {
-			GameObject go = other.gameObject;
-			player.targets.Remove(go);
-		}
-
 		// Test New Object
 		GameObject range = other.gameObject;
 		player.ranges.Remove(new RangeObject(range));
