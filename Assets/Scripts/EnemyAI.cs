@@ -4,73 +4,101 @@ using System.Collections;
 public class EnemyAI : MonoBehaviour {
 
 	#region Properties
+	// Enemy Class
 	private Animator anim;
 	private SpriteRenderer sprite;
-	private Enemy enemy;
-	
+	private Enemy enemyCtrl;
+	// Enemy Healh
+	private EnemyHealth enemyHealth;
+	// Enemy IA 
 	private Transform sight;
 	private float rotateAngle = 0;
 	#endregion
 
+	#region Initialize
 	void Start() {
+		// Enemy Class
 		sight = transform.Find("Sight");
 		anim = GetComponent<Animator>();
 		sprite = GetComponent<SpriteRenderer>();
-		enemy = new Enemy(this, anim, sprite, 4F);
+		enemyCtrl = new Enemy(this, anim, sprite, 4F);
+		// Enemy Health
+		enemyHealth = GetComponent<EnemyHealth>();
+	}
+	#endregion
+
+	#region OnFrameUpdate
+	// Update each frame
+	void Update() {
+		// Get Enemy Life
+		if (enemyHealth.GetLife() <= 0)
+		{
+			// Died
+			callDestroy();
+		}
 	}
 
 	// Use this for initialization
 	void LateUpdate ()
 	{
-		enemy.SetLayerOrder();
+		enemyCtrl.SetLayerOrder();
 	}
+	#endregion
 
+	#region TriggerEvents
 	void OnCollisionEnter2D (Collision2D col)
 	{
 		// Check if it collided
 		if(col.gameObject.tag == "Pickup")
 		{
-			// If is a jar and been thrown
+			// Take damage if is a jar and been thrown in the enemy
 			if(col.gameObject.GetComponent< PickupItem >().beenThrow) {
-				callDestroy();
+				// DoDamage
+				enemyHealth.TakeDamage(1);
 			}
 		}
 	}
+	#endregion
 	
-	public void destroyObject()
-	{
-		// Destroy Object (This is set at the end of PotDestroy animation)
-		Destroy(gameObject);
-	}
-	
-	
+	#region Methods
+
+	#region Destroy
 	public void callDestroy()
 	{
-		// Shake screen
-		StartCoroutine(CameraMovement.shakeCamera(0.3F, 0.015F));
 		// Start Destroy animation
 		anim.SetBool("dying", true);
 	}
 
+	public void destroyObject()
+	{
+		// Destroy Object (This is set at the end of EnemyDie animation)
+		Destroy(gameObject);
+	}
+	#endregion
+
+	#region Sight
 	void RotateSight(float x, float y) {
-		if (enemy.walking) 
+		if (enemyCtrl.walking) 
 		{	
 			// Rotate the Sight
-			if (enemy.lookDirY <= 0 && enemy.lookDirX == 1 ) { // Right
+			if (enemyCtrl.lookDirY <= 0 && enemyCtrl.lookDirX == 1 ) { // Right
 				rotateAngle = 90;
-				enemy.facingAngle = 0;
-			} else if (enemy.lookDirY <= 0 && enemy.lookDirX == -1 ) { // Left
+				enemyCtrl.facingAngle = 0;
+			} else if (enemyCtrl.lookDirY <= 0 && enemyCtrl.lookDirX == -1 ) { // Left
 				rotateAngle = 270;
-				enemy.facingAngle = 180;
-			} else if (enemy.lookDirY == -1 && enemy.lookDirX == 0) { // Down
+				enemyCtrl.facingAngle = 180;
+			} else if (enemyCtrl.lookDirY == -1 && enemyCtrl.lookDirX == 0) { // Down
 				rotateAngle = 0;
-				enemy.facingAngle = 270;
-			} else if (enemy.lookDirY == 1) { // Up
+				enemyCtrl.facingAngle = 270;
+			} else if (enemyCtrl.lookDirY == 1) { // Up
 				rotateAngle = 180;
-				enemy.facingAngle = 90;
+				enemyCtrl.facingAngle = 90;
 			}
 			
 			sight.rotation = Quaternion.Euler(0, 0, rotateAngle);
 		}
 	}
+	#endregion
+
+	#endregion
 }

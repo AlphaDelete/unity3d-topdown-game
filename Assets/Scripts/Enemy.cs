@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Enemy : Humanoid
 {
+	#region Properties
 	//Attack
 	private float _timerAtk;
 	private float _attackTimer ;
@@ -11,16 +12,19 @@ public class Enemy : Humanoid
 	{
 		// Return the value stored in a field.
 		get { return _attacking; }
-		// Store the value in the field.
-		set { _attacking = value; }
 	}
+	#endregion
 
+	#region Initialize
 	public Enemy (MonoBehaviour Obj, Animator Anim, SpriteRenderer Sprt, float Spd) : base(Obj, Anim, Sprt, Spd)
 	{
 		// Vars specific for the enemy
 		_attacking = 0;
 		_timerAtk = 0.4f;
 	}
+	#endregion
+
+	#region Methods
 
 	#region Attack
 	public void SetAttack(bool ButtonDown) {
@@ -60,6 +64,8 @@ public class Enemy : Humanoid
 			}
 		}
 	}
+	#endregion
+
 	#endregion
 
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Player : Humanoid
 {
+	#region Properties
 	//Picking
 	private bool _picking;
 	public bool picking 
@@ -31,7 +32,9 @@ public class Player : Humanoid
 		// Store the value in the field.
 		set { _attacking = value; }
 	}
+	#endregion
 
+	#region Initialize
 	public Player (MonoBehaviour Obj, Animator Anim, SpriteRenderer Sprt, float Spd) : base(Obj, Anim, Sprt, Spd)
 	{
 		// Vars specific for the player
@@ -40,6 +43,9 @@ public class Player : Humanoid
 		_attacking = 0;
 		_timerAtk = 0.4f;
 	}
+	#endregion
+
+	#region Methods
 
 	#region Attack
 	public void SetAttack(bool ButtonDown) {
@@ -72,6 +78,12 @@ public class Player : Humanoid
 					{
 						// Destroy Jar
 						ranges[i].RangeGameObject.GetComponent< PickupItem >().callDestroy();
+						// Set camera to shake (Second, Magnitude)
+						if (CameraMovement.isShaking < 2) obj.StartCoroutine(CameraMovement.shakeCamera(0.3F, 0.015F));
+					} else if (ranges[i].RangeGameObject.tag == "Enemy")
+					{
+						// DoDamage
+						ranges[i].RangeGameObject.GetComponent<EnemyHealth>().TakeDamage(1);
 						// Set camera to shake (Second, Magnitude)
 						if (CameraMovement.isShaking < 2) obj.StartCoroutine(CameraMovement.shakeCamera(0.3F, 0.015F));
 					}
@@ -243,5 +255,6 @@ public class Player : Humanoid
 	}
 	#endregion
 
+	#endregion
 }
 

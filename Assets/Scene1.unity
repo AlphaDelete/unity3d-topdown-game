@@ -4408,6 +4408,7 @@ GameObject:
   - 212: {fileID: 2075297864}
   - 95: {fileID: 2075297863}
   - 114: {fileID: 2075297862}
+  - 114: {fileID: 2075297861}
   - 61: {fileID: 2075297860}
   m_Layer: 11
   m_Name: Enemy
@@ -4427,6 +4428,17 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .5, y: .399679422}
   m_Center: {x: 0, y: -.384220243}
+--- !u!114 &2075297861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2075297859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726e02a5db7289845871e4c3fe0e5f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2075297862
 MonoBehaviour:
   m_ObjectHideFlags: 0

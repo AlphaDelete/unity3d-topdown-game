@@ -74,7 +74,7 @@ public class Humanoid
 	public List<RangeObject> ranges = new List<RangeObject>();
 	#endregion
 
-	#region Initial Instance
+	#region Initialize
 	//This is the public reference that other classes will use
 	public Humanoid (MonoBehaviour Obj,  Animator Anim, SpriteRenderer Sprt, float Spd)
 	{
@@ -116,7 +116,6 @@ public class Humanoid
 		_obj.rigidbody2D.velocity = _movement.normalized * _speed;
 	}
 	#endregion
-	
 
 	#region RangeObjects
 	
@@ -218,8 +217,7 @@ public class Humanoid
 
 
 	#endregion
-
-
+	
 	#endregion
 }
 
