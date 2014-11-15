@@ -23,7 +23,7 @@ public class PickupItem : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D col)
 	{
 		// Check if it collided
-		if(col.gameObject.name != "Player")
+		if(col.gameObject.tag == "Pickup")
 		{
 			callDestroy();
 		}

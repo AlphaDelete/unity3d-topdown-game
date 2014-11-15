@@ -74,7 +74,7 @@ public class Player : Humanoid
 						ranges[i].RangeGameObject.GetComponent< PickupItem >().callDestroy();
 						// Set camera to shake (Second, Magnitude)
 						if (CameraMovement.isShaking < 2) obj.StartCoroutine(CameraMovement.shakeCamera(0.3F, 0.015F));
-					}	
+					}
 				}
 			}
 		}
@@ -114,8 +114,7 @@ public class Player : Humanoid
 				_pickedItem.transform.parent = obj.transform; 
 				// Move item to the players head
 				_pickedItem.transform.localPosition = new Vector3(0, 0.6f, 0);
-				//Remove it on the range objects list
-				//ranges.Remove(new RangeObject(_pickedItem));
+
 			}
 		}
 	}
@@ -173,8 +172,6 @@ public class Player : Humanoid
 			_pickedItem.GetComponent<SpriteRenderer>().sortingLayerName = "Player";
 			// Adjust Object Order
 			_pickedItem.GetComponent<SpriteRenderer>().sortingOrder = (int)((10 * ((obj.transform.position.y + (lookDirY*0.25f))  * -1)));
-			//Put it on the range objects list
-			//ranges.Add(new RangeObject(_pickedItem));
 			// Set no item is picked
 			_pickedItem = null;
 			_picking = false;

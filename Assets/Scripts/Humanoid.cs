@@ -14,15 +14,15 @@ public class Humanoid
 		set { _obj = value; }
 	}
 	// Animation
-	private static Animator _anim;
-	protected static Animator anim
+	private Animator _anim;
+	protected Animator anim
 	{
 		// Return the value stored in a field.
 		get { return _anim; }
 		// Store the value in the field.
 		set { _anim = value; }
 	}
-	private static SpriteRenderer _sprite;
+	private SpriteRenderer _sprite;
 	// Sight
 	private Transform _sightedItem;
 	protected Transform sightedItem
@@ -33,8 +33,8 @@ public class Humanoid
 		set { _sightedItem = value; }
 	}
 	// Movement
-	private static float _speed;
-	public static float speed
+	private float _speed;
+	public float speed
 	{
 		// Return the value stored in a field.
 		get { return _speed; }
@@ -75,8 +75,6 @@ public class Humanoid
 	#endregion
 
 	#region Initial Instance
-	// Needed instance
-	protected static Humanoid instance;
 	//This is the public reference that other classes will use
 	public Humanoid (MonoBehaviour Obj,  Animator Anim, SpriteRenderer Sprt, float Spd)
 	{
@@ -95,6 +93,7 @@ public class Humanoid
 	#region Order
 	public void SetLayerOrder() 
 	{
+		Debug.Log(_sprite.sortingLayerName);
 		_sprite.sortingOrder = (int)(10 * (_obj.transform.position.y * -1));
 	}
 	#endregion

@@ -4,6 +4,8 @@
 TagManager:
   tags:
   - Pickup
+  - Enemy
+  - Sight
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

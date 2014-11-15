@@ -57,16 +57,20 @@ public class PlayerControl : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		// Test New Object
 		GameObject range = other.gameObject;
-		if(!player.ranges.Contains(new RangeObject(range))){
-			player.ranges.Add(new RangeObject(range));
+		if(other.gameObject.tag != "Sight") {
+			if(!player.ranges.Contains(new RangeObject(range))){
+				player.ranges.Add(new RangeObject(range));
+			}
 		}
 	}
 
 	// When an enemy exits the trigger, remove it from the list
 	void OnTriggerExit2D(Collider2D other) {
 		// Test New Object
-		GameObject range = other.gameObject;
-		player.ranges.Remove(new RangeObject(range));
+		if(other.gameObject.tag != "Sight") {
+			GameObject range = other.gameObject;
+			player.ranges.Remove(new RangeObject(range));
+		}
 	}
 	#endregion
 	
