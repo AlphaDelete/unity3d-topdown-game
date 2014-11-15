@@ -93,7 +93,6 @@ public class Humanoid
 	#region Order
 	public void SetLayerOrder() 
 	{
-		Debug.Log(_sprite.sortingLayerName);
 		_sprite.sortingOrder = (int)(10 * (_obj.transform.position.y * -1));
 	}
 	#endregion
