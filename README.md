@@ -41,9 +41,9 @@ Progress: [Dev blog](http://alphadelete.tumblr.com/)
 * Throw Pots; [OK]
 * Pickup/Attack on the right angle; [OK]
 * Attack/Destroy Pots; [OK]
+* Combat System; [OK]
 * Enemies; [Working...]
 * Enemies Path Find;
-* Combat System;
 * Button Triggers / Doors;
 * Create Levels via XML;
 * First release.

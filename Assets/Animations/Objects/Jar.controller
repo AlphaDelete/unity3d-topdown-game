@@ -35,7 +35,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110232849}
   m_DstState: {fileID: 110269203}
-  m_TransitionDuration: .0178465564
+  m_TransitionDuration: .00156158209
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
@@ -57,7 +57,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: ecabf73008bf2d5448b4928e8641a60e, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 71, y: 161, z: 0}
+  m_Position: {x: 132, y: 276, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -72,7 +72,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: e5260490c1404714685e5887d0d95ac2, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 360, y: 168, z: 0}
+  m_Position: {x: 348, y: 168, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
